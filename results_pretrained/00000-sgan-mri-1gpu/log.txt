@@ -1,0 +1,22 @@
+dnnlib: Running training.training_loop.training_loop() on localhost...
+Streaming data using training.dataset.TFRecordDataset...
+Traceback (most recent call last):
+  File "train.py", line 212, in <module>
+    main()
+  File "train.py", line 207, in main
+    dnnlib.submit_run(**kwargs)
+  File "/home/users/jk23541/stylegan3d/dnnlib/submission/submit.py", line 290, in submit_run
+    run_wrapper(submit_config)
+  File "/home/users/jk23541/stylegan3d/dnnlib/submission/submit.py", line 242, in run_wrapper
+    util.call_func_by_name(func_name=submit_config.run_func_name, submit_config=submit_config, **submit_config.run_func_kwargs)
+  File "/home/users/jk23541/stylegan3d/dnnlib/util.py", line 257, in call_func_by_name
+    return func_obj(*args, **kwargs)
+  File "/home/users/jk23541/stylegan3d/training/training_loop.py", line 278, in training_loop
+    training_set = dataset.load_dataset(data_dir=config.data_dir, verbose=True, **dataset_args)
+  File "/home/users/jk23541/stylegan3d/training/dataset.py", line 235, in load_dataset
+    dataset = dnnlib.util.get_obj_by_name(class_name)(**adjusted_kwargs)
+  File "/home/users/jk23541/stylegan3d/training/dataset.py", line 78, in __init__
+    tfr_shapes.append(parse_tfrecord_np(record).shape)
+  File "/home/users/jk23541/stylegan3d/training/dataset.py", line 33, in parse_tfrecord_np
+    return np.fromstring(data, np.uint8).reshape(shape)
+ValueError: cannot reshape array of size 128 into shape (1,4,4,4)
