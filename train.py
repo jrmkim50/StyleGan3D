@@ -38,7 +38,8 @@ if 1:
     # Dataset.
     # desc+= '-mixing'
 
-    desc += '-mri';     dataset = EasyDict(tfrecord_dir='GAN_DS');                 train.mirror_augment = False
+    #desc += '-mri';     dataset = EasyDict(tfrecord_dir='GAN_DS');                 train.mirror_augment = False
+    desc += '-mnist';     dataset = EasyDict(tfrecord_dir='GAN_DS');                 train.mirror_augment = False
     # desc += '-test-d'
 
     # desc += '-ffhq';     dataset = EasyDict(tfrecord_dir='ffhq');                 train.mirror_augment = True

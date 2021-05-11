@@ -11,7 +11,7 @@
 # Paths.
 
 result_dir = 'results_pretrained'
-data_dir = 'SplitData'
+data_dir = 'mnist'
 cache_dir = None
 run_dir_ignore = ['results_proto', 'datasets', 'cache', 'results_256', 'results']
 
