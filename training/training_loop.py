@@ -320,7 +320,7 @@ def training_loop(
     D_train_op = D_opt.apply_updates()
 
     Gs_update_op = Gs.setup_as_moving_average_of(G, beta=Gs_beta)
-    with tf.device('/gpu::0'):
+    with tf.device('/gpu:0'):
         try:
             peak_gpu_mem_op = tf.contrib.memory_stats.MaxBytesInUse()
         except tf.errors.NotFoundError:
